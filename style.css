@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    color: #111;
+}
+
+.myheader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px clamp(12px, 3vw, 36px);
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0
+}
+
+.leftnav,
+.rightnav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.centerheader {
+    text-align: center;
+}
+
+.centerheader h2 {
+    font-size: clamp(18px, 2vw, 26px);
+    letter-spacing: 1px;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.a, .b, .c, .d {
+    padding: 7px 13px;
+    border: 1.5px solid #111;
+    border-radius: 20px;
+    background: transparent;
+    white-space: nowrap;
+}
+
+.b {
+    display: none;
+    padding: 7px 10px;
+}
+
+.c {
+    background: orange;
+    border-color: orange;
+    border-radius: 7px;
+}
+
+.mainbox {
+    position: relative;
+    isolation: isolate;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 40px 16px 100px;
+}
+
+.mainbox p {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    text-align: center;
+    font-size: clamp(38px, 8.5vw, 112px);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: -0.065em;
+    overflow-wrap: anywhere;
+}
+
+.mainbox img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: clamp(150px, 22vw, 300px);
+    height: clamp(135px, 18vw, 250px);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+    transform-origin: center;
+    pointer-events: none;
+}
+
+.img1 { transform: translate(-50%, -50%) rotate(-30deg); }
+.img2 { transform: translate(-50%, -50%) rotate(-20deg); }
+.img3 { transform: translate(-50%, -50%) rotate(-10deg); }
+.img4 { transform: translate(-50%, -50%) rotate(-5deg); }
+.img5 { transform: translate(-50%, -50%) rotate(0deg); }
+
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px clamp(12px, 3vw, 36px) 20px;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.leftfooter h3 {
+    font-size: clamp(11px, 1.2vw, 16px);
+    letter-spacing: 0.04em;
+}
+
+.centerfooter {
+    font-size: 25px;
+}
+
+.rightfooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.rightfooter i {
+    font-size: 20px;
+}
+
+.rightfooter p {
+    flex-basis: 100%;
+    text-align: right;
+    font-size: 12px;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .mainbox {
+        min-height: 430px;
+        padding-bottom: 80px;
+    }
+
+    .mainbox img {
+        width: clamp(145px, 31vw, 230px);
+        height: clamp(130px, 27vw, 195px);
+    }
+
+    .footer {
+        padding-top: 12px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .myheader {
+        padding: 12px 14px;
+    }
+
+    .a {
+        display: none;
+    }
+
+    .b {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rightnav {
+        gap: 6px;
+    }
+
+    .d, .c {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .centerheader h2 {
+        font-size: 17px;
+    }
+
+    .mainbox {
+        padding: 30px 10px 65px;
+    }
+
+    .mainbox p {
+        font-size: clamp(34px, 10vw, 48px);
+        letter-spacing: -0.055em;
+    }
+
+    .mainbox img {
+        width: min(54vw, 205px);
+        height: min(43vw, 165px);
+    }
+
+    .footer {
+        align-items: flex-end;
+        padding: 12px 14px 16px;
+        gap: 8px;
+    }
+
+    .leftfooter h3 {
+        max-width: 125px;
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .centerfooter {
+        font-size: 20px;
+    }
+
+    .rightfooter {
+        gap: 8px;
+    }
+
+    .rightfooter i {
+        font-size: 17px;
+    }
+
+    .rightfooter p {
+        font-size: 10px;
+    }
+}
+
+/* Very narrow phones */
+@media (max-width: 350px) {
+    .centerheader h2 {
+        font-size: 14px;
+    }
+
+    .d, .c {
+        padding: 5px 7px;
+        font-size: 11px;
+    }
+
+    .mainbox p {
+        font-size: 32px;
+    }
+
+    .leftfooter h3 {
+        max-width: 100px;
+        font-size: 9px;
+    }
+}
